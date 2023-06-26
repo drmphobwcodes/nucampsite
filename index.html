@@ -31,11 +31,12 @@
                     <h2>A Better Way to Camp</h2>
                 </div>
                 <div class="col-md-4 col-xl-2 mt-4">
-                    <a class="btn btn-lg btn-info text-nowrap" href="#reserveForm" role="button" class="btn btn-lg btn-info">Reserve Campsite</a>
-                </div>
+                    <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" data-bs-html="true"
+                        title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
 
+                </div>
             </div>
-        </div>
 
     </header>
     <nav class="navbar navbar-dark navbar-expand-sm sticky-top">
@@ -46,14 +47,66 @@
             </button>
             <div class="collapse navbar-collapse" id="nucampNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i>
+                            About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html"><i
+                                class="fa fa-address-card fa-lg"></i> Contact</a></li>
                 </ul>
+                <span class="navbar-text ms-auto">
+                    <a role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row">
+                                <div class="mb-3 col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail"
+                                        placeholder="Enter email">
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword"
+                                        placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row row-content align-items-center">
@@ -81,7 +134,7 @@
             <div class="col">
                 <div class="d-flex">
                     <!--div class="media-body align-self-center"-->
-                
+
                     <div class="align-self-center">
                         <h3>React Lake Campground</h3>
                         <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground
@@ -195,6 +248,11 @@
     <!-- Bootstrap JS plugins -->
     <script src="bootstrap.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        //Add custom Javascript for tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>
