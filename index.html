@@ -38,19 +38,21 @@
 
     </header>
 
-    <!-- Modal for ReserveForm -->
+    <!-- Modal for Vampsite Reservation -->
     <div class="modal fade" id="reserveModal">
         <div class="modal-dialog modal-lg">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
-                    <!--button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
     
                 <div class="modal-body">
                     <div class="container-fluid">
+                        <div class="row">
+                            
                         <form id="reserveForm">
-                            <div class="form-group row">
+                            <div class="row mb-3">
                                 <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
                                 <!-- Select Dropdown -->
                                 <div class="col">
@@ -80,9 +82,9 @@
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </div>
                             </div>  
-                             
-                            </div>
+    
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,6 +132,7 @@
                                     <label class="sr-only" for="loginEmail">Email address</label>
                                     <input type="email" class="form-control form-control-sm" id="loginEmail"
                                         placeholder="Enter email">
+
                                 </div>
                                 <div class="mb-3 col-12">
                                     <label class="sr-only" for="loginPassword">Password</label>
